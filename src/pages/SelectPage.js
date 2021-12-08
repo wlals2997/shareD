@@ -5,7 +5,8 @@ function SelectPage(){
     <div>
     <div>
         <div>
-            <h1>원하시는 OTT서비스를 선택하세요.</h1>
+            <h1>1/3</h1>
+            <div> 원하시는 OTT서비스를 선택하세요.</div>
            
         </div>
         <div>
