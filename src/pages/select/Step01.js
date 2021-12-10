@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SelectPage(){
+function Step01(){
     const handleClick= (e) =>{
         console.log(e.target);
         alert("버튼 클릭");
@@ -25,4 +25,4 @@ function SelectPage(){
     );
 }
 
-export default SelectPage;
+export default Step01;
