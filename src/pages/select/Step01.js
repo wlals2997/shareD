@@ -1,10 +1,16 @@
 import React from 'react';
+import {useState} from "react";
+import { useNavigate } from 'react-router-dom';
 
 function Step01(){
-    const handleClick= (e) =>{
-        console.log(e.target);
-        alert("버튼 클릭");
-    };
+const navigate= useNavigate();
+    // const [nextPage, setNextPage] = useState();
+    // const nextStep= (e) =>{
+
+    //     setNextPage(e.target.value);
+        
+        
+    // }
 
     return ( 
     <div class="top">
@@ -15,8 +21,8 @@ function Step01(){
            
         </div>
         <div>
-        <button onClick={handleClick} value="넷플릭스" type="button" class="btn btn-default">넷플릭스</button>
-        <button type="button" class="btn btn-default">웨이브</button>
+        <button onClick={()=>{navigate({pathname:'./pages/select/step02'})}} value="netflix" type="button" class="btn btn-default">넷플릭스</button>
+        <button  value="wave" type="button" class="btn btn-default">웨이브</button>
            
           
         </div>
