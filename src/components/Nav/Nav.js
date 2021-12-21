@@ -7,7 +7,7 @@ function Nav (){
             <Link to="/">
                 <button>쉐어디란?</button>
             </Link>
-            <Link to="/step01">
+            <Link to="/Select">
                 <button>구독하기</button>
             </Link>
         </div>
