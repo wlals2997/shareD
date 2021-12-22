@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Row, Button, Card,Accordion } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { ottService } from '../data';
+import { ottService } from '../../../data/data';
 import SelectContainer from './SelectOTT.style';
-
+import styles from '../SelectOTT/SelectOTT.module.css';
 import styled from 'styled-components'
 
 
@@ -12,7 +12,7 @@ const SelectOTT = () => {
   const navigate = useNavigate();
 
   return (
-    <div className='my-component'>
+    <div className={styles.mycomponent} >
     <Container>
       <SelectContainer >
         <Row>

@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import MainPage from './pages/Main/MainPage'
-import Nav from './components/Nav/Nav';
+import Header from './components/Header/Header'
 import Select from './pages/Select/SelectOTT/SelectOTT'
 
 
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
     <BrowserRouter>
-    <Nav />
+    <Header />
       <Routes>
         <Route path="/"  exact element={<MainPage/>}/>
         <Route path="/Select" exact element={<Select/>}/>
