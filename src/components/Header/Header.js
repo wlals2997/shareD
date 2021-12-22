@@ -10,10 +10,13 @@ function Header (){
             </div>
             <div className={styles.menu}>
             <Link to="/">
-                <button className={styles.menuBtn}>Home</button>
+                <button className={styles.menuBtn}>홈</button>
             </Link>
             <Link to="/Select">
-                <button className={styles.menuBtn}>Matching</button>
+                <button className={styles.menuBtn}>파티매칭</button>
+            </Link>
+            <Link to="/MyPage">
+                <button className={styles.menuBtn}>마이페이지</button>
             </Link>
             </div>
         </div>
