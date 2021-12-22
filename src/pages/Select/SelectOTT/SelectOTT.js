@@ -1,18 +1,19 @@
 import React from 'react';
-import { Container, Row, Button, Card,Accordion } from 'react-bootstrap';
+import { Row, Button, Card,Accordion, Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { ottService } from '../../../data/data';
 import SelectContainer from './SelectOTT.style';
-import styles from '../SelectOTT/SelectOTT.module.css';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-
+let Back= styled.div`
+background:#f0f0f0;
+`
 
 const SelectOTT = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.mycomponent} >
+    <Back>
     <Container>
       <SelectContainer >
         <Row>
@@ -54,8 +55,8 @@ const SelectOTT = () => {
   </Accordion.Item>
 </Accordion>
       </SelectContainer>
-    </Container>
-    </div>
+      </Container>
+    </Back>
   );
 };
 export default SelectOTT;
