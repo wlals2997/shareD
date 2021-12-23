@@ -6,7 +6,7 @@ import * as BootStrap from 'react-bootstrap';
 
 
 const SelectContainer= styled(BootStrap.Container)
-`background:white ;
+`height: 100vh;
 max-width:640px;
 width:100%;
 padding:10px 30px;
