@@ -1,62 +1,86 @@
 import React from 'react';
-import { Row, Button, Card,Accordion, Container } from 'react-bootstrap';
+// import { Row, Button, Accordion, Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { ottService } from '../../../data/data';
 import SelectContainer from './SelectOTT.style';
 import styled from 'styled-components';
 
-let Back= styled.div`
-background:#f0f0f0;
+const Back= styled.div`
+background:#F8F8F8;
 `
+const Card=styled.div`
+background:white;
+max-width: 640px;
+    padding: 0 20px;
+  width: 100%;
+  min-width: 200px;
+  padding: 8px 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  
+`
+const SelectboxTitle=styled.h2`
+display:block;
+text-align:left;
+font-size: 18px;
+line-height: 50px;
+margin: 0;
+font-weight: bold;
+margin: 10px 0;
+`
+const Selectbox=styled.div`
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+justify-content: space-between;
+gap:9px
 
+`
+const Select=styled.div`
+display: flex;
+    flex:1 0 ;
+    
+    flex-direction: column;
+    height: 75px;
+    align-items: center;
+    padding-top: 5px;
+    background-color: #F8F8F8;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+`
 const SelectOTT = () => {
   const navigate = useNavigate();
 
   return (
-    <Back> 
-    <Container>
-      <SelectContainer >
-        <Row>
-        <Card >
-  <Card.Body>
-            <Card.Title>보고싶은 서비스를 선택하세요</Card.Title>
-            {Object.entries(ottService).map(function (ott, i) {
+    <Back>
+  <SelectContainer>
+<Card>
+<SelectboxTitle>
+  보고싶은 서비스를 선택하세요.
+  </SelectboxTitle>
+<Selectbox>
+{Object.entries(ottService).map(function (ott, i) {
               console.log(ott);
               //    let object=Object.entries(ottService);
               //    console.log(object);
               return (
-                <Button
+                <Select
                   key={i}
                   onClick={() => {
                     navigate('/select/date');
                   }}
                 >
                   {ott[1].title}
-                </Button>
-              );
-            })}
-          </Card.Body>
-          </Card>
-        </Row>
-        
-        <Accordion>
-  <Accordion.Item eventKey="0">
-    <Accordion.Header>결제 후 환불이 가능한가요?</Accordion.Header>
-    <Accordion.Body>
-      환불하지마
-    </Accordion.Body>
-  </Accordion.Item>
-  <Accordion.Item eventKey="1">
-    <Accordion.Header>결제 후 어떻게 사용할 수 있나요?</Accordion.Header>
-    <Accordion.Body>
-      저희 쉐어디 마이페이지에서 아이디, 비밀번호를 확인하신 후 구독하신 OTT서비스를 통해 
-      로그인하시면 바로 사용가능합니다.
-    </Accordion.Body>
-  </Accordion.Item>
-</Accordion>
-      </SelectContainer>
-      </Container>
-    </Back>
+                </Select>
+              )
+})}
+</Selectbox>
+
+</Card>
+  </SelectContainer>
+  </Back>
   );
 };
 export default SelectOTT;

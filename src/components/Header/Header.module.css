@@ -1,9 +1,12 @@
+
 .header{
-    display: flex;
-   width: 1000px;
-    height: 60px;
-    justify-content: space-between;
-    align-items: center;
+    max-width: 1200px;
+ display: flex;
+ 
+  background-color: var(--color-white);
+  padding: 16px;
+  align-items: center;
+  
 }
 
 .icon{
@@ -18,7 +21,7 @@
     height: 80px;
 }
 .menu{
-    margin-top: 10px;
+    margin: 10px 0;
    
 }
 .menuBtn{
