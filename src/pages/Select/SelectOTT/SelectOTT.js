@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // import { Row, Button, Accordion, Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { ottService } from '../../../data/data';
+import { SelectContext } from '../index';
 import SelectContainer from './SelectOTT.style';
 import styled from 'styled-components';
 
@@ -52,7 +53,7 @@ display: flex;
 `
 const SelectOTT = () => {
   const navigate = useNavigate();
-
+const {dispatch}= useContext(SelectContext);
   return (
     <Back>
   <SelectContainer>
@@ -69,6 +70,7 @@ const SelectOTT = () => {
                 <Select
                   key={i}
                   onClick={() => {
+                    dispatch({type:'SelectOTT',ott});
                     navigate('/select/date');
                   }}
                 >
