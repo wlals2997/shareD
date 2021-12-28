@@ -7,7 +7,7 @@ import Header from './components/Header/Header'
 import Select from './pages/Select/SelectOTT/SelectOTT'
 import MyPage from './pages/MyPage/MyPage'
 import Guide from './pages/Guide/Guide'
-
+import Date from './pages/Select/SelectDate/SelectDate'
 
 
 function App() {
@@ -17,9 +17,10 @@ function App() {
     <Header />
       <Routes>
         <Route path="/"  exact element={<MainPage/>}/>
-        <Route path="/Select" exact element={<Select/>}/>
-        <Route path="/Guide" exact element={<Guide/>}/>
-        <Route path="/MyPage" exact element={<MyPage/>}/>
+        <Route path="/select/*" exact element={<Select/>}/>
+        <Route path="/guide" exact element={<Guide/>}/>
+        <Route path="/date" exact element={<Date/>}/>
+        <Route path="/myPage" exact element={<MyPage/>}/>
         
       </Routes>
     </BrowserRouter>

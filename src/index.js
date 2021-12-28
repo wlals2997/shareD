@@ -4,7 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
+import {createGlobalStyle} from 'styled-components'
 
+const GlobalStyle =createGlobalStyle`
+*{
+  box-sizing:border-box
+}`
 ReactDOM.render(
   <React.StrictMode>
     <App />

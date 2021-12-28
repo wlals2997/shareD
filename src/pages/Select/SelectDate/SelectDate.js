@@ -1,20 +1,64 @@
 import React from "react";
-import {Container,Row,Card} from 'react-bootstrap'
-import SelectContainer from './SelectOTT.style';
+
+import SelectContainer from './SelectDay.style';
+import styled from 'styled-components';
+
+const Back= styled.div`
+background:#F8F8F8;
+`
+const Card=styled.div`
+background:white;
+max-width: 640px;
+    padding: 0 20px;
+  width: 100%;
+  min-width: 200px;
+  padding: 8px 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  
+`
+const SelectboxTitle=styled.h2`
+display:block;
+text-align:left;
+font-size: 18px;
+line-height: 50px;
+margin: 0;
+font-weight: bold;
+margin: 10px 0;
+`
+const Selectbox=styled.div`
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+justify-content: space-between;
+gap:9px
+
+`
+const Select=styled.div`
+display: flex;
+    flex:1 0 ;
+    
+    flex-direction: column;
+    height: 75px;
+    align-items: center;
+    padding-top: 5px;
+    background-color: #F8F8F8;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+`
+
 const SelectDate=()=>{
     return(
-        <Container>
-        <SelectContainer >
-          <Row>
-          <Card >
-    <Card.Body>
-              <Card.Title>이용시간과 금액을 확인해주세요</Card.Title>
-           
-            </Card.Body>
+        <Back>
+          <SelectContainer>
+            <Card>
+              
             </Card>
-          </Row>
           </SelectContainer>
-         </Container>
+      
+        </Back>
     )
 }
 export default SelectDate;

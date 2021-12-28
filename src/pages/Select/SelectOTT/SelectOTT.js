@@ -61,7 +61,7 @@ const SelectOTT = () => {
   보고싶은 서비스를 선택하세요.
   </SelectboxTitle>
 <Selectbox>
-{Object.entries(ottService).map(function (ott, i) {
+{Object.entries(ottService).map((ott, i)=> {
               console.log(ott);
               //    let object=Object.entries(ottService);
               //    console.log(object);
