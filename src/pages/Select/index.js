@@ -1,7 +1,9 @@
 import React, { createContext, useMemo, useReducer } from 'react';
 import { SelectOTT } from './SelectOTT/SelectOTT';
 
-const SelectContext = createContext({}); //Context 생성
+const SelectContext = createContext({
+  dispatch:()=>{}
+}); //Context 생성
 
 const initialState = {
   selectOtt: null, //   초기값

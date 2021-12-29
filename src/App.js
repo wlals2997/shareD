@@ -19,7 +19,7 @@ function App() {
         <Route path="/"  exact element={<MainPage/>}/>
         <Route path="/select/*" exact element={<Select/>}/>
         <Route path="/guide" exact element={<Guide/>}/>
-        <Route path="/date" exact element={<Date/>}/>
+        {/* <Route path="/select/date" exact element={<Date/>}/> */}
         <Route path="/myPage" exact element={<MyPage/>}/>
         
       </Routes>
