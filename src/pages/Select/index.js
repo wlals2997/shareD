@@ -9,7 +9,7 @@ const SelectContext = createContext({
 }); //Context 생성
 
 const initialState = {
-  selectOtt: null, //   초기값
+  selectOtt: null, 
   currentDate: null,
   startTime: null,
   closeTime: null,
