@@ -16,11 +16,11 @@ function App() {
     <BrowserRouter>
     <Header />
       <Routes>
-        <Route path="/"  exact element={<MainPage/>}/>
-        <Route path="/select/*" exact element={<Select/>}/>
-        <Route path="/guide" exact element={<Guide/>}/>
+        <Route path="/*"  exact element={<MainPage/>}/>
+        <Route path="/select/*"  element={<Select/>}/>
+        <Route path="/guide" element={<Guide/>}/>
         {/* <Route path="/select/date" exact element={<Date/>}/> */}
-        <Route path="/myPage" exact element={<MyPage/>}/>
+        <Route path="/myPage"  element={<MyPage/>}/>
         
       </Routes>
     </BrowserRouter>

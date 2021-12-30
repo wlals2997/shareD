@@ -1,7 +1,10 @@
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import React, { createContext, useMemo, useReducer } from 'react';
 import { SelectOTT } from './SelectOTT/SelectOTT';
 
 const SelectContext = createContext({
+  selectData: {},
   dispatch:()=>{}
 }); //Context 생성
 
@@ -10,7 +13,8 @@ const initialState = {
   currentDate: null,
   startTime: null,
   closeTime: null,
-  selectPay: null,
+  price:null,
+  selectPay: null
 };
 
 const reducer = (state = initialState, action) => {
@@ -18,18 +22,25 @@ const reducer = (state = initialState, action) => {
     case 'SelectOTT':
       return {
         ...state,
-        selectOtt: action.ott,
+        selectOtt: action.ott
+      };
+    case 'SelecDate':
+      return {
+        ...state,
+       closeTime: action.time,
+       price:action.price
       };
     default:
       return state;
   }
 };
+let store =createStore(reducer)
 
-const Provider = ({ children }) => {
+const Selector = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const value = useMemo(() => ({ initialState: state, dispatch }), [state]);
+  const value = useMemo(() => ({selectData: state, dispatch }), [state]);
   return (
-    <SelectContext.Provider value={{ initialState: state, dispatch }}>
+    <SelectContext.Provider value={{ selectData: state, dispatch }}>
       {children}
     </SelectContext.Provider>
   );
