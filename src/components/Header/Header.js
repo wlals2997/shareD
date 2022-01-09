@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import shareD_logo from '../../data/logo.JPG';
 import styled from 'styled-components';
 
