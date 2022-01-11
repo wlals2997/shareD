@@ -3,8 +3,9 @@ import React from 'react';
 import SelectContainer from './SelectDay.style';
 import Button from '../../../components/Button/Button.style';
 import styled from 'styled-components';
+import arrowdown from '../../../data/arrowdown.png'
 //import { SelectContext } from '../index';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { SelectOTT } from '../SelectOTT';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSortDown } from "@fortawesome/free-solid-svg-icons";
@@ -40,7 +41,7 @@ margin-right:5px;
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  
   background: white;
   max-width: 640px;
   padding: 0 20px;
@@ -91,6 +92,7 @@ const TimeCard = styled.div`
   margin-bottom: 20px;
 `;
 const Time = styled.div`
+
   color: gray;
 `;
 const PriceBox = styled.div`
@@ -99,10 +101,18 @@ const PriceBox = styled.div`
 
 const D= styled.div`
 display:flex;
-justify-content:space-between;
+
 `
+const F=styled.img`
+margin-top:12px;
+width:12px;
+height:6px;
+`
+
 const SelectDate = () => {
+ 
   const navigate = useNavigate();
+  let selectott=useParams();
   //const { selectOtt } = selectData;
   //const { selectData, dispatch } = useContext(SelectContext);
   //const isSelete = false;
@@ -129,13 +139,12 @@ const SelectDate = () => {
         </div>
         <OttCard>
 <D>
-          <div>넷플릭스 프리미엄</div>
-          <FontAwesomeIcon icon={faSortDown} size="2x"  />
+          <div>{selectott.selectott}</div>
+          <F src={arrowdown} alt="down"></F>
           </D>
         </OttCard>
         <Card>
           <TimeCheckTitle> 이용시간과 금액을 확인해주세요.</TimeCheckTitle>
-
           <TimeCard>
             <Time>종료시점</Time>
             <Time>내일 00시</Time>
@@ -144,12 +153,13 @@ const SelectDate = () => {
             <Time>이용시간</Time>
             <Time>28시간</Time>
           </TimeCard>
+          
           <PriceBox>
             <div>금액</div>
             <div>0,000원</div>
           </PriceBox>
 
-          <Button>결제</Button>
+          <Button onClick={()=>{navigate('select/pay')}} >결제</Button>
         </Card>
       </SelectContainer>
     </Back>

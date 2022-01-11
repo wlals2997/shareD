@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/"  exact element={<MainPage/>}/>
         <Route path="/select"  element={<Select/>}/>
-        <Route path="/select/:a/date" exact element={<Date/>}/>
+        <Route path="/select/:selectott/date" exact element={<Date/>}/>
         <Route path="/guide" element={<Guide/>}/>
         {/* <Route path="/myPage"  element={<MyPage/>}/> */}
         
