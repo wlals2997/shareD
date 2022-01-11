@@ -1,11 +1,11 @@
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import React, { createContext, useMemo, useReducer } from 'react';
-import { SelectOTT } from './SelectOTT/SelectOTT';
 
-const SelectContext = createContext({
-  selectData: {},
-  dispatch:()=>{}
+import React, { createContext, useMemo, useReducer } from 'react';
+import { SelectOTT } from './SelectOTT'
+import {SelectDate} from './SelectDate';
+
+export const SelectContext = createContext({
+  selectData: [],
+  dispatch:()=>{},
 }); //Context 생성
 
 const initialState = {
@@ -13,36 +13,34 @@ const initialState = {
   currentDate: null,
   startTime: null,
   closeTime: null,
-  price:null,
-  selectPay: null
+  price:0
 };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
     case 'SelectOTT':
       return {
         ...state,
-        selectOtt: action.ott
+        selectOtt: action.value
       };
-    case 'SelecDate':
-      return {
-        ...state,
-       closeTime: action.time,
-       price:action.price
-      };
+ 
     default:
       return state;
   }
 };
-let store =createStore(reducer)
+//let store =createStore(reducer)
 
-const Selector = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const value = useMemo(() => ({selectData: state, dispatch }), [state]);
+const Selector = () => {
+  const [state,dispatch]=useReducer(reducer,initialState);
+  const valueMemo = useMemo(() => ({selectData: state.selectData, dispatch }), [state.selectData]);
   return (
-    <SelectContext.Provider value={{ selectData: state, dispatch }}>
-      {children}
+    <SelectContext.Provider value={valueMemo}>
+    <SelectOTT/>
+  <SelectDate/>
+    <div>{state.startTime}</div>
+    <div>{state.closetTime}</div>
     </SelectContext.Provider>
+   
   );
 };
-export { SelectContext, Provider };
+export default Selector;

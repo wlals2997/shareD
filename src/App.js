@@ -5,7 +5,7 @@ import './App.css';
 import MainPage from './pages/Main/MainPage'
 import Header from './components/Header/Header'
 import Select from './pages/Select/SelectOTT/SelectOTT'
-import MyPage from './pages/MyPage/MyPage'
+//import MyPage from './pages/MyPage/MyPage'
 import Guide from './pages/Guide/Guide'
 import Date from './pages/Select/SelectDate/SelectDate'
 
@@ -16,11 +16,11 @@ function App() {
     <BrowserRouter>
     <Header />
       <Routes>
-        <Route path="/*"  exact element={<MainPage/>}/>
+        <Route path="/"  exact element={<MainPage/>}/>
         <Route path="/select"  element={<Select/>}/>
-        <Route path="/select/date" exact element={<Date/>}/>
+        <Route path="/select/:a/date" exact element={<Date/>}/>
         <Route path="/guide" element={<Guide/>}/>
-        <Route path="/myPage"  element={<MyPage/>}/>
+        {/* <Route path="/myPage"  element={<MyPage/>}/> */}
         
       </Routes>
     </BrowserRouter>

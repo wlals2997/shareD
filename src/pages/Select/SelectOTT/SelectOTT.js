@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
-// import { Row, Button, Accordion, Container } from 'react-bootstrap';
+import React, { useContext,useState,useCallback } from 'react';
+
 import { useNavigate } from 'react-router-dom';
-import { ottService } from '../../../data/data';
+import netflix_Logo from '../../../data/netflix.png'
+import wave_Logo from '../../../data/wave.png'
 import { SelectContext } from '../index';
 import SelectContainer from './SelectOTT.style';
 import styled from 'styled-components';
@@ -51,9 +52,22 @@ display: flex;
     cursor: pointer;
     border: none;
 `
+const SelectImg=styled.img`
+width: 44px;
+height: 44px;
+ pointer-events : none;
+`
 const SelectOTT = () => {
+  let [selectOTT,setSelectOTT]=useState(undefined)
   const navigate = useNavigate();
 const {dispatch}= useContext(SelectContext);
+
+const setService=useCallback((e)=>{
+setSelectOTT(e.target.innerText);
+dispatch({type:'SelectOTT',value:selectOTT })
+},[selectOTT]);
+navigate(`/select/${selectOTT}/date`)
+
   return (
     <Back>
   <SelectContainer>
@@ -61,23 +75,10 @@ const {dispatch}= useContext(SelectContext);
 <SelectboxTitle>
   보고싶은 서비스를 선택하세요.
   </SelectboxTitle>
-<Selectbox>
-{Object.entries(ottService).map((ott, i)=> {
-              console.log(ott);
-              //    let object=Object.entries(ottService);
-              //    console.log(object);
-              return (
-                <Select
-                  key={i}
-                  onClick={() => {
-                    dispatch({type:'SelectOTT',ott});
-                    navigate('/select/date');
-                  }}
-                >
-                  {ott[1].title}
-                </Select>
-              )
-})}
+<Selectbox  onClick={setService}>
+<Select><SelectImg src={ netflix_Logo} alt='netflix'  ></SelectImg>Netflix</Select>
+<Select ><SelectImg src={ wave_Logo} alt='netflix' ></SelectImg>Wave</Select>
+
 </Selectbox>
 
 </Card>

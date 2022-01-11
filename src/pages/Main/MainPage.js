@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '../../components/Button/Button.style';
 import main_Image from '../../data/Saly-24.jpg';
 import { useNavigate } from 'react-router-dom';
 
@@ -40,13 +41,13 @@ const MainPage = () => {
         <MainImage src={main_Image} alt='mainImage'></MainImage>
       </div>
       <Btn>
-        <Startbtn
+        <Button
           onClick={() => {
             navigate('/select');
           }}
         >
           시작하기
-        </Startbtn>
+        </Button>
       </Btn>
     </Main>
   );

@@ -10,7 +10,7 @@ const SelectContainer= styled(BootStrap.Container)
 max-width:640px;
 width:100%;
 padding:50px 30px;
-/
+
 `;
 
 //  const SelectTitle = styled(BootStrap.Card.Title)`

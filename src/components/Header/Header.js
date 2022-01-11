@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import shareD_logo from '../../data/logo.JPG';
+import shareD_logo from '../../data/logo.png';
 import styled from 'styled-components';
 
 const Navbar = styled.div`
@@ -15,8 +15,9 @@ const Navbar = styled.div`
 
 const Logo = styled.img`
 cursor: pointer;
-width: 80px;
-height: 80px;
+width: 35px;
+height: 40px;
+
 }
 `;
 const Menu = styled.div`
@@ -44,13 +45,13 @@ const Header = () => {
         <Logo src={shareD_logo} alt='Logo'></Logo>
       </NavLink>
       <Menu>
-        <NavLink exact to='/Select' activeStyle={activestyle}>
+        <NavLink exact to='/select' activeStyle={activestyle}>
           파티매칭
         </NavLink>
-        <NavLink to='/Guide' activeStyle={activestyle}>
+        <NavLink to='/guide' activeStyle={activestyle}>
           사용안내
         </NavLink>
-        <NavLink to='/MyPage' activeStyle={activestyle}>
+        <NavLink to='/mypage' activeStyle={activestyle}>
           마이페이지
         </NavLink>
       </Menu>
