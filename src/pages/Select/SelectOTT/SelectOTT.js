@@ -28,7 +28,7 @@ navigate(`/select/${selectOTT}/date`)
   보고싶은 서비스를 선택하세요.
   </A.SelectboxTitle>
 <A.Selectbox  onClick={setService}>
-<A.Select><A.SelectImg src={ netflix_Logo} alt='netflix'  ></A.SelectImg>Netflix</A.Select>
+<A.Select><A.SelectImg src={ netflix_Logo} alt='netflix'></A.SelectImg>Netflix</A.Select>
 <A.Select ><A.SelectImg src={ wave_Logo} alt='wave' ></A.SelectImg>Wave</A.Select>
 
 </A.Selectbox>

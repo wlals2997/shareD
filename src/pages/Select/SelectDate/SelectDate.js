@@ -51,6 +51,7 @@ const Card = styled.div`
   font-size: 14px;
   box-sizing: border-box;
   border-radius: 8px;
+  padding:0 30px;
   
 `;
 const OttCard=styled.div`
@@ -88,20 +89,28 @@ const Clock = styled.div`
 `;
 
 const TimeCard = styled.div`
+display:flex;
   justify-content: space-between;
+  
   margin-bottom: 20px;
+  padding:0 40px;
 `;
 const Time = styled.div`
 
   color: gray;
 `;
 const PriceBox = styled.div`
+display:flex;
+justify-content:space-between;
+padding:0 40px;
   margin-bottom: 40px;
+  font-size:18px;
+  font-weight:700;
 `;
 
 const D= styled.div`
 display:flex;
-
+justify-content: space-between;
 `
 const F=styled.img`
 margin-top:12px;
@@ -117,7 +126,7 @@ const SelectDate = () => {
   //const { selectData, dispatch } = useContext(SelectContext);
   //const isSelete = false;
 
-  //if (!isSelete) {
+ // if (!isSelete) {
   // return <Navigate to='/select' replace={true} />;
   //}
 
@@ -145,6 +154,7 @@ const SelectDate = () => {
         </OttCard>
         <Card>
           <TimeCheckTitle> 이용시간과 금액을 확인해주세요.</TimeCheckTitle>
+
           <TimeCard>
             <Time>종료시점</Time>
             <Time>내일 00시</Time>
